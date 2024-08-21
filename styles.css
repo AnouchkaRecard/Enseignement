@@ -411,14 +411,15 @@ body {
 }
 
 .feature-item {
-    background-color: #f9f9f9;
+    background-color: #d8d8d893;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px #110163;
+    box-shadow: 2px 4px 2px #00000074;
     width: 300px;
     text-align: center;
     opacity: 0;
     animation: fadeInUp 1s ease-in forwards;
+    color:black;
 }
 
 .feature-item_2 {
@@ -692,3 +693,24 @@ body {
         display: block;
     }
 }
+
+/*bouton */
+.cta-button {
+    background-color: #0056b3 ;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 1s;
+}
+
+.button-container {
+    display: flex; /* Utilise Flexbox pour le conteneur */
+    justify-content: center; /* Centre horizontalement les éléments enfants */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du conteneur si nécessaire */
+}
+
