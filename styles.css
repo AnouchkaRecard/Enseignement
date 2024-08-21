@@ -411,7 +411,7 @@ body {
 }
 
 .feature-item {
-    background-color: #d8d8d893;
+    background-color: #02005c18;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 2px 4px 2px #00000074;
@@ -602,7 +602,7 @@ body {
 }
 
 .image-back {
-    background-color: #480101; /* Couleur de fond du dos de la carte */
+    background-color: #02005c82; /* Couleur de fond du dos de la carte */
     color: #fff;
     transform: rotateY(180deg);
     display: flex;
