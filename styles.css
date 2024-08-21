@@ -1,0 +1,694 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:  #0f013114;
+}
+
+/* Conteneur du menu */
+.menu-deroulant {
+    background-color: #0f0131;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    position: relative; /* Ajouté pour le positionnement du menu mobile */
+}
+
+/* Styles du logo */
+.logo {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 20%;
+}
+
+/* Styles du menu de navigation */
+.navbar {
+    flex-grow: 1;
+    z-index: 10; /* Assurez-vous que la navbar est au-dessus */
+
+    
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.nav-links li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1.3rem;
+    padding: 15px 10px;
+
+}
+
+/* Styles des sous-menus */
+.deroulant-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #313131;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    z-index: 20; /* Ajouter un z-index élevé pour s'assurer que le menu apparaît au-dessus */
+
+}
+
+.deroulant-menu li {
+    margin: 0;
+}
+
+.deroulant-menu a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Affichage du sous-menu au survol */
+.nav-links li:hover .deroulant-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles du bouton hamburger */
+.hamburger-menu {
+    display: none; /* Masquer le bouton hamburger par défaut */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto; /* Alignement à droite */
+    z-index: 1001; /* Assurez-vous qu'il est au-dessus du menu mobile */
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Menu mobile caché par défaut */
+.mobile-menu {
+    display: none; /* Masquer le menu mobile par défaut */
+    position: absolute;
+    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 5px; /* Ajout d'arrondis aux coins du menu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 0; /* Espacement interne pour les éléments du menu */
+    z-index: 1000; /* Assurez-vous que le menu mobile est au-dessus */
+
+}
+/* Styles des sous-menus pour la version mobile */
+.mobile-menu {
+    display: none; /* Masquer le menu mobile par défaut */
+    position: absolute;
+    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    z-index: 1000; /* Ajouter un z-index élevé pour s'assurer que le menu apparaît au-dessus */
+}
+
+/* Styles pour les listes déroulantes */
+.dropdown-menu {
+    display: none; /* Masquer les sous-menus par défaut */
+    position: absolute;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* S'assurer que le sous-menu est au-dessus du reste */
+}
+
+/* Afficher les sous-menus lors du clic */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Styles des liens du menu mobile */
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
+
+}
+
+.mobile-menu li {
+    border-bottom: 1px solid #444; /* Ligne de séparation entre les éléments */
+    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
+
+}
+
+.mobile-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-menu a:hover {
+    background-color: #555; /* Changement de couleur au survol */
+    color: #e0e0e0;
+}
+
+/* Styles pour les sous-menus dans le mobile */
+.mobile-menu .dropdown-menu {
+    display: none; /* Assurez-vous que les sous-menus sont cachés par défaut */
+    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
+
+    
+}
+
+.mobile-menu .dropdown.active .dropdown-menu {
+    display: block; /* Afficher le sous-menu si le parent est actif */
+}
+
+/* Afficher le bouton hamburger et le menu mobile sur petits écrans */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Masquer le menu de bureau sur mobile */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Afficher le bouton hamburger sur mobile */
+    }
+
+    .mobile-menu.show {
+        display: block; /* Afficher le menu mobile lorsqu'il a la classe 'show' */
+    }
+}
+
+
+/*section 1*/
+.banner {
+    position: relative;
+    background: url('salledeclasse.jpg') no-repeat center center;
+    background-size: cover;
+    color: #011163;
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1s ease-in;
+    overflow: hidden; /* Assure que rien ne dépasse du conteneur */
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Couleur noire avec 50% d'opacité */
+    z-index: 1; /* Assure que l'overlay est au-dessus de l'image de fond mais sous le contenu */
+}
+
+.banner-content {
+    position: relative; /* Place le contenu au-dessus de l'overlay */
+    z-index: 2; /* Assure que le texte et les boutons sont au-dessus de l'overlay */
+    opacity:100%;
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 0.5s;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 1s;
+}
+
+.cta-button {
+    background-color: #c2d3e5 ;
+    color: #fff;
+    padding: 8px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards 1s;
+}
+
+/*accueil - 2eme section */
+.about {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #480101;
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* accueil section 3*/
+    /* Style général pour la section */
+    .resources {
+        background-color: #f4f4f9; /* Couleur de fond douce */
+        padding: 40px 20px;
+        text-align: center;
+        animation: fadeIn 1.5s ease-out;
+    }
+    
+    /* Conteneur pour aligner le contenu */
+    .resources .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Style du titre */
+    .resources h2 {
+        font-size: 2.5em;
+        color: #480101; /* Couleur sombre pour le titre */
+        margin-bottom: 20px;
+        animation: slideInDown 1s ease-out;
+    }
+    
+    /* Style des éléments de liste */
+    .resources ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .resources li {
+        margin: 15px 0;
+    }
+    
+    /* Style des liens */
+    .resources a {
+        text-decoration: none;
+        color: #3498db; /* Couleur du lien */
+        font-size: 1.2em;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        transition: color 0.3s ease, border-color 0.3s ease;
+        display: inline-block;
+    }
+    
+    /* Effet au survol des liens */
+    .resources a:hover {
+        color: #1d72b8; /* Couleur au survol */
+        border-color: #1d72b8;
+    }
+    
+    /* Animation de fondu */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    /* Animation pour faire apparaître le titre de haut en bas */
+    @keyframes slideInDown {
+        0% {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    /* Adaptation pour les petits écrans */
+    @media (max-width: 768px) {
+        .resources h2 {
+            font-size: 2em; /* Réduction de la taille du titre pour les petits écrans */
+        }
+        
+        .resources a {
+            font-size: 1em; /* Réduction de la taille des liens pour les petits écrans */
+        }
+    }
+    
+    /* Adaptation pour les très petits écrans */
+    @media (max-width: 480px) {
+
+        .about{
+            margin-bottom:60%;
+        }
+        .resources {
+            padding: 30px 10px; /* Réduction du padding pour les très petits écrans */
+        }
+        
+        .resources h2 {
+            font-size: 1.5em; /* Réduction supplémentaire de la taille du titre */
+        }
+        
+        .resources a {
+            font-size: 0.9em; /* Réduction de la taille des liens */
+        }
+    }
+
+/*4eme section */
+
+.intro-math, .features, .testimonials, .events {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
+    box-shadow: 0 4px 8px rgb(69, 21, 21);
+
+}
+
+.intro-math h2 {
+    background-color: none ;
+    color: #0a0148;;
+}
+
+.features .feature-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #110163;
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards;
+}
+
+.feature-item_2 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #110163;
+    width: 80%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.testimonial-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in forwards;
+}
+
+.testimonials blockquote {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+/* Style du pied de page */
+.site-footer {
+    background-color:rgba(15, 1, 49, 1);  /* Couleur bleu foncé */
+    color: #ffffff; /* Texte en blanc */
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 40px;
+    box-shadow: 100px 40px 98px #110163;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.footer-name {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.footer-link {
+    color: #ff6600; /* Lien en orange */
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-location {
+    margin: 0;
+}
+
+/* Ajustements pour grands écrans */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-name, .footer-link, .footer-location {
+        margin: 10px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .banner-content {
+        padding: 30px 10px;
+    }
+    
+    .features .feature-grid {
+        flex-direction: column;
+        margin-right: 10%;
+
+    }
+    
+    .feature-item {
+        width: 100%;
+    }
+    .feature-item_2 {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles pour la section About */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    
+}
+
+.image-card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin-right: 5%;
+    margin-left:5%;
+
+}
+
+.image-front, .image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    transition: transform 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgb(16, 16, 16);
+
+}
+
+.image-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-back {
+    background-color: #480101; /* Couleur de fond du dos de la carte */
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-card:hover .image-front {
+    transform: rotateY(180deg);
+}
+
+.image-card:hover .image-back {
+    transform: rotateY(0deg);
+}
+
+.text-overlay {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 100%;
+}
+
+.text-overlay p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color : white;
+}
+
+.view-button {
+    background-color: #011163;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.view-button:hover {
+    background-color: #ffffff;
+    color: #011163;
+    transform: scale(1.05);
+}
+
+/* Adaptation spécifique pour les petits écrans */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+    }
+    
+    .image-card {
+        width: 100%;
+        margin-left:1%;
+        height: 100%;
+
+    }
+
+    .image-front, .image-back {
+        height: 150px;
+        margin-bottom : 40%;
+    }
+
+    .text-overlay p {
+        font-size: 1em;
+    }
+
+    .view-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* br mobile */
+/* Par défaut, la classe mobile-only est cachée */
+.mobile-only {
+    display: none;
+}
+
+/* Afficher .mobile-only uniquement sur les écrans de moins de 768px (typique pour les mobiles) */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+}

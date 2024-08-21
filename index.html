@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu avec Sous-Menus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/x-icon" class="round-image">
+
+
+</head>
+<body>
+    <header>
+        <div class="menu-deroulant">
+            <div class="logo">Mme Récard |</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil </a></li>
+                    <li class="deroulant">
+                        <a href="#" class="deroulant-toggle">Cours </a>
+                        <ul class="deroulant-menu">
+                            <li><a href="#6eme">6ème</a></li>
+                            <li><a href="#5eme">5ème</a></li>
+                            <li><a href="#4eme">4ème</a></li>
+                            <li><a href="#3eme">3ème</a></li>
+                        </ul>
+                    </li>
+                    <li class="deroulant">
+                        <a href="#" class="deroulant-toggle">Exercices </a>
+                        <ul class="deroulant-menu">
+                            <li><a href="#6eme-ex">6ème</a></li>
+                            <li><a href="#5eme-ex">5ème</a></li>
+                            <li><a href="#4eme-ex">4ème</a></li>
+                            <li><a href="#3eme-ex">3ème</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Bouton hamburger pour les mobiles -->
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    
+        <!-- Menu mobile caché par défaut -->
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Cours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#6eme">6ème</a></li>
+                        <li><a href="#5eme">5ème</a></li>
+                        <li><a href="#4eme">4ème</a></li>
+                        <li><a href="#3eme">3ème</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Exercices</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#6eme-ex">6ème</a></li>
+                        <li><a href="#5eme-ex">5ème</a></li>
+                        <li><a href="#4eme-ex">4ème</a></li>
+                        <li><a href="#3eme-ex">3ème</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="banner">
+        <div class="banner-content" style="text-align: center;">
+            <h1>Ressources Mathématiques, <br> pour tous les Niveaux</h1>
+            <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
+    
+            
+            <div id="countdown-container">
+                <p class="brevet">Temps restant avant le brevet :</p>
+    
+                <div id="countdown">
+                    <div class="time-block">
+                        <span class="countdown-days" id="days">00</span>
+                        <span class="label">Jours</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-hours" id="hours">00</span>
+                        <span class="label">Heures</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-minutes" id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="countdown-seconds" id="seconds">00</span>
+                        <span class="label">Secondes</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Barre de chargement -->
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+    
+            <!-- Boutons d'appel à l'action 
+            <div class="cta-buttons">
+                <a href="#cours" class="cta-button">Voir les Cours</a>
+                <a href="#exercices" class="cta-button">Commencer les Exercices</a>
+            </div>-->
+        </div>
+    
+        <style>
+            /* Style pour le texte "Temps restant avant le brevet" */
+            .brevet {
+                font-size: 1.5em;
+                background: #480101;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+                margin-top:2%;
+            }
+    
+            /* Container principal du compte à rebours */
+            #countdown-container {
+                text-align: center;
+                margin-top: 20px;
+                opacity: 0;
+                animation: fadeInUp 2s ease-in-out forwards 1s;
+            }
+    
+            /* Styles pour le timer */
+            #countdown {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3em;
+                gap: 10px;
+            }
+    
+            /* Chaque bloc de temps */
+            .time-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: #480101;
+            }
+    
+            /* Styles pour les labels sous chaque nombre */
+            .label {
+                font-size: 0.5em;
+                margin-top: 5px;
+            }
+    
+            /* Séparateurs entre les blocs de temps */
+            .separator {
+                font-size: 1em;
+                color: #480101;
+                margin-top: -40px;
+            }
+    
+            /* Progress bar container */
+            .progress-bar-container {
+                width: 80%;
+                max-width: 600px;
+                height: 10px;
+                background-color: #ccc;
+                border-radius: 5px;
+                overflow: hidden;
+                margin: 20px auto;
+                opacity: 0;
+                animation: fadeInUp 2s ease-in-out forwards 0.5s;
+                box-shadow: #480101;
+            }
+    
+            /* Progress bar */
+            .progress-bar {
+                width: 0;
+                height: 100%;
+                background: linear-gradient(135deg, #480101, #f90101);
+                animation: loadProgressBar 3s ease-in-out forwards;
+                box-shadow: #480101;
+            }
+    
+            /* Keyframes pour la barre de progression */
+            @keyframes loadProgressBar {
+                to {
+                    width: 100%;
+                }
+            }
+    
+            /* Animation de fondu pour le timer */
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            /* Animation pour le titre et le sous-titre */
+            .banner-content h1 {
+                animation: fadeInDown 2s ease-out forwards;
+            }
+    
+            .banner-content p {
+                animation: fadeInUp 2s ease-out forwards 0.5s;
+            }
+    
+            @keyframes fadeInDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            /* Styles pour les boutons CTA */
+            .cta-buttons {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                opacity: 0;
+                animation: fadeInUp 2s ease-in-out forwards 2s;
+            }
+    
+            .cta-button {
+                background-color: #011163;
+                color: #fff;
+                padding: 15px 25px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 1.2em;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+    
+            .cta-button:hover {
+                background-color: #ffffff;
+                transform: scale(1.05);
+                color: black;
+            }
+
+    
+            /* Adaptation spécifique pour les très petits écrans */
+            @media (max-width: 480px) {
+                .brevet {
+                    font-size: 1em;
+                }
+    
+                #countdown {
+                    font-size: 1.5em;
+                    gap: 3px;
+                }
+    
+                .label {
+                    font-size: 0.3em;
+                }
+    
+                .separator {
+                    font-size: 0.6em;
+                }
+    
+                .progress-bar-container {
+                    width: 80%;
+                    height: 6px;
+                }
+    
+                .cta-button {
+                    padding: 10px 15px;
+                    font-size: 1em;
+                }
+            }
+        </style>
+    </header>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <h2>À Propos</h2>
+            <p>Ce site est dédié à aider les élèves à améliorer leurs compétences en mathématiques grâce à des cours, des exercices pratiques, et des ressources éducatives.</p>
+            <div class="image-gallery">
+                <div class="image-card">
+                    <div class="image-front">
+                        <img src="imagecours.jpg" alt="Image 1">
+                        <div class="text-overlay">
+                            <p>Accéder au cours</p>
+                        </div>
+                    </div>
+                    <div class="image-back">
+                       
+                        <button class="view-button">Voir</button>
+                    </div>
+                </div>
+
+                <br class="mobile-only"><br class="mobile-only"><br class="mobile-only"><br class="mobile-only"><br class="mobile-only">
+                <br class="mobile-only"><br class="mobile-only"><br class="mobile-only">
+                <div class="image-card">
+                    <div class="image-front">
+                        <img src="imagexercice.jpg" alt="Image 2">
+                        <div class="text-overlay">
+                            <p>Commencer les exercices</p>
+                        </div>
+                    </div>
+                    <div class="image-back">
+                        <div class="text-overlay">
+                        </div>
+                        <button class="view-button">Voir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="features" class="features">
+        <!-- <h2>Fonctionnalités Clés</h2> -->
+        <div class="feature-grid">
+            
+            <div class="feature-item">
+                <h3>Outils de Révision</h3>
+                <p>Accédez aux leçons pour réviser.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Quetions flashs </h3>
+                <p>Testez vos connaissances avec des questions flashs adaptés.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Supports de Cours</h3>
+                <p>Consultez des supports de cours pour approfondir vos connaissances.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2>Ressources Supplémentaires</h2>
+            <ul>
+                <li><a href="lien-vers-une-ressource" target="_blank">Fiches de révision pour le brevet</a></li>
+                <li><a href="lien-vers-une-ressource" target="_blank">Vidéos explicatives sur les fractions</a></li>
+                <li><a href="lien-vers-une-ressource" target="_blank">Site de référence pour l'apprentissage des mathématiques</a></li>
+            </ul>
+        </div>
+    </section>
+
+    
+
+     <section id="introduction" class="intro-math">
+        <h2 style="font-size :1.4em"> Pourquoi les Mathématiques ?</h2>
+        <p align="justify">Les mathématiques sont la clé pour comprendre le monde qui nous entoure. Elles sont essentielles pour développer des compétences analytiques et résoudre des problemes complexes.</p>
+       <!-- <a href="#features" class="cta-button">Découvrir plus</a> --> 
+    </section>
+
+
+    <footer class="site-footer" style="margin-left:2%; margin-right:2%">
+        <div class="footer-content">
+            <p class="footer-name"> Anouchka Récard <br class="mobile-only">- Professeure de mathématiques </p>
+            <p><a href="mentions_legales.html" class="footer-link">Mentions légales</a></p>
+            <p class="footer-location">Saint-Étienne, France</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="script.js"></script>
+    <script>
+        // Fixe la date du brevet
+        const brevetDate = new Date("June 26, 2025 00:00:00").getTime();
+    
+        // Met à jour le compte à rebours toutes les secondes
+        const countdownFunction = setInterval(function() {
+            // Obtenir la date et l'heure actuelles
+            const now = new Date().getTime();
+            
+            // Calculer la différence entre la date actuelle et la date du brevet
+            const distance = brevetDate - now;
+            
+            // Calculer les jours, heures, minutes et secondes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Afficher les résultats dans les éléments HTML respectifs
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            
+            // Si le compte à rebours est terminé
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Le brevet est en cours !";
+            }
+        }, 1000);
+    </script>
+       
+</body>
+</html>
