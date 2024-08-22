@@ -714,3 +714,109 @@ body {
     margin-top: 20px; /* Ajoute de l'espace au-dessus du conteneur si nécessaire */
 }
 
+/* Style for the section container */
+.four-columns {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the container that holds the columns */
+.four-columns .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Style for each column */
+.four-columns .column {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* Style for the titles */
+.four-columns .column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #011163;
+    text-align: center;
+}
+
+/* Style for the lists without bullets */
+.four-columns .no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.four-columns .no-bullets li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+
+/* Vertical bar between columns */
+.four-columns .column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    margin-bottom : 110px;
+    right: 0;
+    width: 1px;
+    height: 90%;
+    background-color: #ccc;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: growBar 0.5s ease-in-out forwards;
+}
+
+/* Animation for the bar */
+@keyframes growBar {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Hover effect for columns */
+.four-columns .column:hover {
+    transform: translateY(-10px);
+    
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .four-columns .container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .four-columns .column {
+        width: 100%;
+        padding: 10px;
+        
+        
+    }
+
+    .four-columns .column:not(:last-child)::after {
+        width: 90%;
+        height: 1px;
+        bottom: 0;
+        right: 5%;
+        transform: scaleX(0);
+        transform-origin: left;
+        margin-top : -10%;
+
+    }
+
+    @keyframes growBar {
+        to {
+            transform: scaleX(1);
+        }
+    }
+}
+
