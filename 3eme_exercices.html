@@ -10,24 +10,56 @@
 
 </head>
 
-<header>
-    <div class="menu-deroulant">
-        <div class="logo">Mme Récard |</div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil </a></li>
-                <li class="deroulant">
-                    <a href="#" class="deroulant-toggle">Cours </a>
-                    <ul class="deroulant-menu">
+    <header>
+        <div class="menu-deroulant">
+            <div class="logo">Mme Récard |</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil </a></li>
+                    <li class="deroulant">
+                        <a href="#" class="deroulant-toggle">Cours </a>
+                        <ul class="deroulant-menu">
+                            <li><a href="6eme_cours.html">6ème</a></li>
+                            <li><a href="5eme_cours.html">5ème</a></li>
+                            <li><a href="4eme_cours.html">4ème</a></li>
+                            <li><a href="3eme_cours.html">3ème</a></li>
+                        </ul>
+                    </li>
+                    <li class="deroulant">
+                        <a href="#" class="deroulant-toggle">Exercices </a>
+                        <ul class="deroulant-menu">
+                            <li><a href="6eme_exercices.html">6ème</a></li>
+                            <li><a href="5eme_exercices.html">5ème</a></li>
+                            <li><a href="4eme_exercices.html">4ème</a></li>
+                            <li><a href="3eme_exercices.html">3ème</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Bouton hamburger pour les mobiles -->
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    
+        <!-- Menu mobile caché par défaut -->
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Cours</a>
+                    <ul class="dropdown-menu">
                         <li><a href="6eme_cours.html">6ème</a></li>
                         <li><a href="5eme_cours.html">5ème</a></li>
                         <li><a href="4eme_cours.html">4ème</a></li>
                         <li><a href="3eme_cours.html">3ème</a></li>
                     </ul>
                 </li>
-                <li class="deroulant">
-                    <a href="#" class="deroulant-toggle">Exercices </a>
-                    <ul class="deroulant-menu">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Exercices</a>
+                    <ul class="dropdown-menu">
                         <li><a href="6eme_exercices.html">6ème</a></li>
                         <li><a href="5eme_exercices.html">5ème</a></li>
                         <li><a href="4eme_exercices.html">4ème</a></li>
@@ -36,45 +68,13 @@
                 </li>
             </ul>
         </nav>
-        <!-- Bouton hamburger pour les mobiles -->
-        <div class="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </div>
-
-    <!-- Menu mobile caché par défaut -->
-    <nav class="mobile-menu">
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Cours</a>
-                <ul class="dropdown-menu">
-                    <li><a href="6eme_cours.html">6ème</a></li>
-                    <li><a href="5eme_cours.html">5ème</a></li>
-                    <li><a href="4eme_cours.html">4ème</a></li>
-                    <li><a href="3eme_cours.html">3ème</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Exercices</a>
-                <ul class="dropdown-menu">
-                    <li><a href="6eme_exercices.html">6ème</a></li>
-                    <li><a href="5eme_exercices.html">5ème</a></li>
-                    <li><a href="4eme_exercices.html">4ème</a></li>
-                    <li><a href="3eme_exercices.html">3ème</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
-<script src="script.js"></script>
+    </header>
+    <script src="script.js"></script>
 
 
 <header class="banner">
     <div class="banner-content" style="text-align: center;">
-        <h1>Cours - Niveau 6ème</h1>
+        <h1>Exercices - Niveau 3ème</h1>
         <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
 
         
@@ -268,19 +268,24 @@
             <h3>Nombre et Calcul</h3>
             <ul class="no-bullets">
 
-                <li> <a href=""> Règles de calculs </a> </li>
-                <li><a href="">  Fractions </a> </li>
-                <li> <a href=""> Arithmétiques </a> </li>
-                <li> <a href=""> Nombres relatifs  </a> </li>
-                <li> <a href=""> Calcul littéral </a> </li>
+                <li> <a href=""> Calculs numériques </a> </li>
+                    <li><a href="">  Développements </a></li>
+                    <li> <a href=""> Factorisations </a> </li>
+                    <li> <a href=""> Equations </a> </li>
+                    <li> <a href=""> Arithmétiques </a> </li>
             </ul>
         </div>
 
         <div class="column">
             <h3>Organisation et Gestion de Données </h3>
             <ul class="no-bullets">
-                <li> <a href=""> Proportionnalité </a> </li>
-                <li><a href="">  Probabilités et statistiques </a></li>
+                <li> <a href=""> Notions de fonctions </a> </li>
+                <li><a href="">  Fonctions affines </a></li>
+                <li><a href="">  Fonctions linéaires </a></li>
+                <li><a href="">  Proportionnalité </a></li>
+                <li><a href="">  Probabilités </a></li>
+                <li><a href="">  Statistiques </a></li>
+
             </ul>
         </div>
 
@@ -288,18 +293,15 @@
             <h3>Espace et Géométrie</h3>
             <ul class="no-bullets">
 
-                <li> <a href=""> Nombres relatifs et repérage </a> </li>
-                <li><a href="">  Géométrie du triangle </a></li>
-                <li> <a href=""> Angle et parallélisme </a> </li>
-                <li> <a href=""> Symétrie </a> </li>
-                <li> <a href=""> Parallélogrammes </a> </li>
-                <li> <a href=""> Périmètres et aires </a> </li>
-                <li> <a href=""> Solides </a> </li>
+                <li> <a href=""> Théorème de Thalès </a> </li>
+                <li><a href="">  Triangles semblables </a></li>
+                <li> <a href=""> Trigonométrie </a> </li>
+                <li> <a href=""> Transformations </a> </li>
+                <li> <a href=""> Espace </a> </li>
 
 
             </ul>
         </div>
-
 
         <div class="column">
             <h3>Algorithmie et Programmation</h3>
@@ -316,6 +318,8 @@
     <div class="container">
         <h2 style="font-size:1.6em ; color: #011163">Ressources Supplémentaires</h2>
         <ul>
+            <li><a href="lien-vers-une-ressource" target="_blank">Fiches de révisions</a></li>
+            <li><a href="https://drive.google.com/file/d/19laF5t4qcWTBAXVLAh3kImf8Of5uCO5c/view?usp=drive_link" target="_blank">Carnet de réussite </a></li>
             <li><a href="lien-vers-une-ressource" target="_blank"> Questions flashs </a></li>
         </ul>
     </div>
@@ -330,4 +334,3 @@
 </footer>
 
 </html>
-
