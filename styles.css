@@ -3,6 +3,10 @@
     --text-color-light: #000000;
     --background-color-dark: #121212;
     --text-color-dark: #e0e0e0;
+    --card-bg-light: #ffffff;
+    --card-border-light: #ddd;
+    --card-bg-dark: #1e1e1e;
+    --card-border-dark: #444;
     --progress-bar-bg-light: #e0e0e0;
     --progress-bar-light: #4caf50;
     --progress-bar-bg-dark: #333333;
@@ -11,63 +15,7 @@
     --menu-text-light: #000000;
     --menu-bg-dark: #1c1c1c;
     --menu-text-dark: #e0e0e0;
-}
-
-/* Styles généraux pour le mode clair */
-body {
-    background-color: var(--background-color-light);
-    color: var(--text-color-light);
-}
-
-.progress-bar-container {
-    background-color: var(--progress-bar-bg-light);
-}
-
-.progress-bar {
-    background-color: var(--progress-bar-light);
-}
-
-.hamburger-menu {
-    background-color: var(--menu-bg-light);
-    color: var(--menu-text-light);
-}
-
-.brevet {
-    color: var(--text-color-light);
-}
-
-/* Mode sombre */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--background-color-dark);
-        color: var(--text-color-dark);
-    }
-
-    /* Mode sombre pour les cartes */
-    .card {
-        background-color: #2c2c2c;
-        border-color: #444;
-    }
-
-    /* Mode sombre pour la barre de menu */
-    .hamburger-menu {
-        background-color: var(--menu-bg-dark);
-        color: var(--menu-text-dark);
-    }
-
-    /* Mode sombre pour la barre de progression */
-    .progress-bar-container {
-        background-color: var(--progress-bar-bg-dark);
-    }
-
-    .progress-bar {
-        background-color: var(--progress-bar-dark);
-    }
-
-    /* Mode sombre pour le texte spécifique */
-    .brevet {
-        color: var(--text-color-dark);
-    }
+    --mobile-only-bg: transparent; /* Fond pour les éléments mobile-only */
 }
 
 body {
