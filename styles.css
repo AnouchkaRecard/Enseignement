@@ -538,11 +538,12 @@ body {
     .features .feature-grid {
         flex-direction: column;
         margin-right: 10%;
-
+        margin-top: -5%;
     }
     
     .feature-item {
         width: 100%;
+        margin-bottom: 4%;
     }
     .feature-item_2 {
         width: 100%;
@@ -683,6 +684,8 @@ body {
         width: 100%;
         margin-left:1%;
         height: 100%;
+        margin-bottom: 7%;
+
 
     }
 
