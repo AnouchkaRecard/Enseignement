@@ -184,10 +184,8 @@ body {
     .mobile-menu .dropdown-menu a {
         color: #fff;
         font-size: 1.1rem;
-        font-weight: bold;
         padding-left: 30px;
         margin-bottom: 5px; /* Espacement entre les éléments */
-        border-radius: 5px; /* Arrondir les coins */
     }
     .mobile-menu .dropdown-menu a:hover {
         background-color: #76c7c0; /* Fond encore plus clair au survol */
