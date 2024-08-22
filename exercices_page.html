@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+
     <header>
         <div class="menu-deroulant">
             <div class="logo">Mme Récard |</div>
@@ -69,43 +69,17 @@
             </ul>
         </nav>
     </header>
+    <script src="script.js"></script>
 
-    <header class="banner">
+    <header class="banner" style=" position: relative;
+    background: url('exercices_page.jpg') no-repeat center center;
+    background-size: cover;"
+>
         <div class="banner-content" style="text-align: center;">
-            <h1>Ressources Mathématiques, <br> pour tous les Niveaux</h1>
-            <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
+            <h1>Choisisez votre niveau </h1>
     
             
-            <div id="countdown-container">
-                <p class="brevet"> Premier jour du brevet dans :</p>
-    
-                <div id="countdown">
-                    <div class="time-block">
-                        <span class="countdown-days" id="days">00</span>
-                        <span class="label">Jours</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-hours" id="hours">00</span>
-                        <span class="label">Heures</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-minutes" id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-seconds" id="seconds">00</span>
-                        <span class="label">Secondes</span>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Barre de chargement -->
-            <div class="progress-bar-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div>
+            
     
             <!-- Boutons d'appel à l'action 
             <div class="cta-buttons">
@@ -254,7 +228,7 @@
                 transform: scale(1.05);
                 color: black;
             }
-
+    
     
             /* Adaptation spécifique pour les très petits écrans */
             @media (max-width: 480px) {
@@ -287,85 +261,34 @@
             }
         </style>
     </header>
-    
-    <section class="about" id="about">
-        <div class="container">
-            <h2>À Propos</h2>
-            <p>Ce site est dédié à aider les élèves à améliorer leurs compétences en mathématiques grâce à des cours, des exercices pratiques, et des ressources éducatives.</p>
-            <div class="image-gallery">
-                <div class="image-card">
-                    <div class="image-front">
-                        <img src="imagecours.jpg" alt="Image 1">
-                        <div class="text-overlay">
-                            <p>Accéder au cours</p>
-                        </div>
-                    </div>
-                    <div class="image-back">                                  
-                         <a href="cours_page.html" class="cta-button">Accéder aux cours </a> 
-                   </div>
-                </div>
 
-                <br class="mobile-only"><br class="mobile-only"><br class="mobile-only"><br class="mobile-only"><br class="mobile-only">
-                <br class="mobile-only"><br class="mobile-only"><br class="mobile-only">
-                <div class="image-card">
-                    <div class="image-front">
-                        <img src="imagexercice.jpg" alt="Image 2">
-                        <div class="text-overlay">
-                            <p>Commencer les exerices</p>
-                        </div>
+    
+    <section class="choose-level">
+        <div class="container">
+            <div class="level-options">
+                <div class="level" onclick="window.location.href='6eme_exercices.html';">
+                    <div class="level-content">
+                        <h2>6ème</h2>
                     </div>
-                    <div class="image-back">
-                        <div class="text-overlay">
-                        </div>
-                        <a href="exercices_page.html" class="cta-button">Commencer les exos</a> 
+                </div>
+                <div class="level" onclick="window.location.href='5eme_exercices.html';">
+                    <div class="level-content">
+                        <h2>5ème</h2>
+                    </div>
+                </div>
+                <div class="level" onclick="window.location.href='4eme_exercices.html';">
+                    <div class="level-content">
+                        <h2>4ème</h2>
+                    </div>
+                </div>
+                <div class="level" onclick="window.location.href='3eme_exercices.html';">
+                    <div class="level-content">
+                        <h2>3ème</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    
-
-    <section id="features" class="features">
-        <!-- <h2>Fonctionnalités Clés</h2> -->
-        <div class="feature-grid">
-            
-            <div class="feature-item">
-                <h3>Outils de Révision</h3>
-                <p>Accédez aux leçons pour réviser.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Questions flashs </h3>
-                <p>Testez vos connaissances avec des questions flashs adaptés.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Supports de Cours</h3>
-                <p>Consultez des supports de cours pour approfondir vos connaissances.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="resources" id="resources">
-        <div class="container">
-            <h2>Ressources Supplémentaires</h2>
-            <ul>
-                <li><a href="lien-vers-une-ressource" target="_blank">Fiches de révision pour le brevet</a></li>
-                <li><a href="lien-vers-une-ressource" target="_blank"> Questions flashs </a></li>
-                <li><a href="https://maths-et-tiques.fr/" target="_blank"> Site de Yvan Monka - Professeur de mathématiques à Strasbourg</a></li>
-                <li><a href="https://www.youtube.com/@YMONKA" target="_blank"> Compte Youtube de Yvan Monka </a></li>
-
-            </ul>
-        </div>
-    </section>
-
-    
-
-     <section id="introduction" class="intro-math">
-        <h2 style="font-size :1.4em"> Pourquoi les Mathématiques ?</h2>
-        <p align="justify">Les mathématiques sont la clé pour comprendre le monde qui nous entoure. Elles sont essentielles pour développer des compétences analytiques et résoudre des problemes complexes.</p>
-       <!-- <a href="#features" class="cta-button">Découvrir plus</a> --> 
-    </section>
-
 
     <footer class="site-footer" style="margin-left:2%; margin-right:2%">
         <div class="footer-content">
@@ -374,41 +297,5 @@
             <p class="footer-location">Saint-Étienne, France</p>
         </div>
     </footer>
-    
-    
-    
-    <script src="script.js"></script>
-    <script>
-        // Fixe la date du brevet
-        const brevetDate = new Date("June 26, 2025 00:00:00").getTime();
-    
-        // Met à jour le compte à rebours toutes les secondes
-        const countdownFunction = setInterval(function() {
-            // Obtenir la date et l'heure actuelles
-            const now = new Date().getTime();
-            
-            // Calculer la différence entre la date actuelle et la date du brevet
-            const distance = brevetDate - now;
-            
-            // Calculer les jours, heures, minutes et secondes
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Afficher les résultats dans les éléments HTML respectifs
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-            
-            // Si le compte à rebours est terminé
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "Le brevet est en cours !";
-            }
-        }, 1000);
-    </script>
-       
-</body>
-</html>
+
+    </html>
