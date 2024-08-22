@@ -120,7 +120,7 @@ body {
 }
 
 .bar {
-    background-color: #fff !important; /* Forcer la couleur blanche */
+    background-color: #fff;
     height: 3px;
     width: 25px;
     margin: 4px 0;
@@ -133,7 +133,6 @@ body {
         background-color: #fff !important; /* Assure la couleur blanche en mode sombre */
     }
 }
-
 
 /* Menu mobile caché par défaut */
 .mobile-menu {
@@ -297,6 +296,7 @@ body {
     padding: 50px 20px;
     background-color: #f9f9f9;
     text-align: center;
+    margin-bottom:-10%;
     
 }
 
@@ -424,6 +424,8 @@ body {
 
 }
 
+
+
 .intro-math h2 {
     background-color: none ;
     color: #0a0148;;
@@ -434,6 +436,7 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .feature-item {
@@ -446,6 +449,7 @@ body {
     opacity: 0;
     animation: fadeInUp 1s ease-in forwards;
     color:black;
+    
 }
 
 .feature-item_2 {
@@ -586,7 +590,8 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 50px;
+    
     
 }
 
@@ -597,6 +602,7 @@ body {
     perspective: 1000px;
     margin-right: 5%;
     margin-left:5%;
+    
 
 }
 
@@ -611,6 +617,7 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 10px 10px rgb(16, 16, 16);
+
 
 }
 
