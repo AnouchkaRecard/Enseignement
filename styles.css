@@ -781,42 +781,46 @@ body {
     }
 }
 
-/* Hover effect for columns */
-.four-columns .column:hover {
-    transform: translateY(-10px);
-    
-}
-
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-    .four-columns .container {
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .four-columns .column {
-        width: 100%;
-        padding: 10px;
-        
-        
-    }
-
-    .four-columns .column:not(:last-child)::after {
-        width: 90%;
-        height: 1px;
-        bottom: 0;
-        right: 5%;
-        transform: scaleX(0);
-        transform-origin: left;
-        margin-top : -10%;
-
-    }
 
     @keyframes growBar {
         to {
             transform: scaleX(1);
         }
     }
+
+/* Styles pour les colonnes dans la section four-columns */
+.four-columns .column {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
+/* Barres horizontales entre les colonnes uniquement pour la version mobile */
+@media (max-width: 768px) {
+    .four-columns .container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .four-columns .column {
+        width: 80%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: center;
+        margin-left:10%
+    }
+
+    /* Ajouter une barre horizontale entre chaque colonne */
+    .four-columns .column:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+    }
+}
