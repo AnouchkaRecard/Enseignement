@@ -212,7 +212,7 @@ body {
 /*section 1*/
 .banner {
     position: relative;
-    background: url('salledeclasse.jpg') no-repeat center center;
+    background: url('accueil.jpg') no-repeat center center;
     background-size: cover;
     color: #011163;
     text-align: center;
