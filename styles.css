@@ -1,3 +1,4 @@
+/* Styles de base */
 :root {
     --background-color-light: #ffffff;
     --text-color-light: #000000;
@@ -21,7 +22,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color:  #0f013114;
+    background-color: #0f013114;
 }
 
 /* Conteneur du menu */
@@ -31,7 +32,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px 20px;
-    position: relative; /* Ajouté pour le positionnement du menu mobile */
+    position: relative;
 }
 
 /* Styles du logo */
@@ -46,9 +47,7 @@ body {
 /* Styles du menu de navigation */
 .navbar {
     flex-grow: 1;
-    z-index: 10; /* Assurez-vous que la navbar est au-dessus */
-
-    
+    z-index: 10;
 }
 
 .nav-links {
@@ -56,7 +55,6 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    
 }
 
 .nav-links li {
@@ -71,10 +69,9 @@ body {
     display: block;
     font-size: 1.3rem;
     padding: 15px 10px;
-
 }
 
-/* Styles des sous-menus */
+/* Styles du sous-menu */
 .deroulant-menu {
     display: none;
     position: absolute;
@@ -89,8 +86,7 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateY(-10px);
-    z-index: 20; /* Ajouter un z-index élevé pour s'assurer que le menu apparaît au-dessus */
-
+    z-index: 20;
 }
 
 .deroulant-menu li {
@@ -112,11 +108,11 @@ body {
 
 /* Styles du bouton hamburger */
 .hamburger-menu {
-    display: none; /* Masquer le bouton hamburger par défaut */
+    display: none;
     flex-direction: column;
     cursor: pointer;
-    margin-left: auto; /* Alignement à droite */
-    z-index: 1001; /* Assurez-vous qu'il est au-dessus du menu mobile */
+    margin-left: auto;
+    z-index: 1001;
 }
 
 .bar {
@@ -127,56 +123,24 @@ body {
     transition: 0.3s;
 }
 
-/* Mode sombre avec même spécificité */
 @media (prefers-color-scheme: dark) {
     .bar {
-        background-color: #fff !important; /* Assure la couleur blanche en mode sombre */
+        background-color: #fff !important;
     }
 }
 
 /* Menu mobile caché par défaut */
 .mobile-menu {
-    display: none; /* Masquer le menu mobile par défaut */
+    display: none;
     position: absolute;
-    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+    top: 60px;
     left: 0;
     background-color: #333;
     width: 100%;
     z-index: 1000;
-    border-radius: 5px; /* Ajout d'arrondis aux coins du menu */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 10px 0; /* Espacement interne pour les éléments du menu */
-    z-index: 1000; /* Assurez-vous que le menu mobile est au-dessus */
-
-}
-/* Styles des sous-menus pour la version mobile */
-.mobile-menu {
-    display: none; /* Masquer le menu mobile par défaut */
-    position: absolute;
-    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
-    left: 0;
-    background-color: #333;
-    width: 100%;
-    z-index: 1000; /* Ajouter un z-index élevé pour s'assurer que le menu apparaît au-dessus */
-}
-
-/* Styles pour les listes déroulantes */
-.dropdown-menu {
-    display: none; /* Masquer les sous-menus par défaut */
-    position: absolute;
-    left: 0;
-    background-color: #444;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1001; /* S'assurer que le sous-menu est au-dessus du reste */
-}
-
-/* Afficher les sous-menus lors du clic */
-.dropdown:hover .dropdown-menu {
-    display: block;
+    padding: 10px 0;
 }
 
 /* Styles des liens du menu mobile */
@@ -184,14 +148,10 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
-
 }
 
 .mobile-menu li {
-    border-bottom: 1px solid #444; /* Ligne de séparation entre les éléments */
-    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
-
+    border-bottom: 1px solid #444;
 }
 
 .mobile-menu a {
@@ -204,34 +164,49 @@ body {
 }
 
 .mobile-menu a:hover {
-    background-color: #555; /* Changement de couleur au survol */
+    background-color: #555;
     color: #e0e0e0;
 }
 
 /* Styles pour les sous-menus dans le mobile */
 .mobile-menu .dropdown-menu {
-    display: none; /* Assurez-vous que les sous-menus sont cachés par défaut */
-    z-index: 1001; /* Assurez-vous que les sous-menus sont au-dessus du reste */
-
-    
+    display: none;
+    padding-left: 20px; /* Indentation pour les sous-menus */
 }
 
+/* Afficher le sous-menu lorsqu'il est activé */
 .mobile-menu .dropdown.active .dropdown-menu {
-    display: block; /* Afficher le sous-menu si le parent est actif */
+    display: block;
+}
+
+/* Styles pour rendre les sous-menus plus clairs en mobile */
+@media (max-width: 768px) {
+    .mobile-menu .dropdown-menu a {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding-left: 30px;
+        margin-bottom: 5px; /* Espacement entre les éléments */
+        border-radius: 5px; /* Arrondir les coins */
+    }
+    .mobile-menu .dropdown-menu a:hover {
+        background-color: #76c7c0; /* Fond encore plus clair au survol */
+        color: #000; /* Changer la couleur du texte au survol */
+    }
 }
 
 /* Afficher le bouton hamburger et le menu mobile sur petits écrans */
 @media (max-width: 768px) {
     .navbar {
-        display: none; /* Masquer le menu de bureau sur mobile */
+        display: none;
     }
 
     .hamburger-menu {
-        display: flex; /* Afficher le bouton hamburger sur mobile */
+        display: flex;
     }
 
     .mobile-menu.show {
-        display: block; /* Afficher le menu mobile lorsqu'il a la classe 'show' */
+        display: block;
     }
 }
 
