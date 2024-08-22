@@ -391,9 +391,7 @@ body {
     /* Adaptation pour les très petits écrans */
     @media (max-width: 480px) {
 
-        .about{
-            margin-bottom:60%;
-        }
+        
         .resources {
             padding: 30px 10px; /* Réduction du padding pour les très petits écrans */
         }
@@ -538,7 +536,6 @@ body {
     .features .feature-grid {
         flex-direction: column;
         margin-right: 10%;
-        margin-top: -5%;
     }
     
     .feature-item {
@@ -684,7 +681,7 @@ body {
         width: 100%;
         margin-left:1%;
         height: 100%;
-        margin-bottom: 7%;
+        margin-bottom: 15%;
 
 
     }
