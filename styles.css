@@ -13,9 +13,26 @@
     --menu-text-dark: #e0e0e0;
 }
 
-/* Styles généraux */
+/* Styles généraux pour le mode clair */
 body {
     background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+.progress-bar-container {
+    background-color: var(--progress-bar-bg-light);
+}
+
+.progress-bar {
+    background-color: var(--progress-bar-light);
+}
+
+.hamburger-menu {
+    background-color: var(--menu-bg-light);
+    color: var(--menu-text-light);
+}
+
+.brevet {
     color: var(--text-color-light);
 }
 
