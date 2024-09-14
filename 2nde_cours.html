@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+
+    <title> Enseignement </title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <meta property="og:title" content="Enseignement">
+    <meta property="og:description" content="Ressources mathématiques destinées aux élèves - niveau collège">
+    <meta property="og:image" content="https://anouchkarecard.github.io/Enseignement/logo.jpg">
+    <meta property="og:url" content="https://anouchkarecard.github.io/Enseignement/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enseignement Mathématiques - Mme Récard">
+
+
+</head>
+
+<header>
+    <div class="menu-deroulant">
+        <div class="logo">Mme Récard |</div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil </a></li>
+                <li class="deroulant">
+                    <a href="#" class="deroulant-toggle">Cours </a>
+                    <ul class="deroulant-menu">
+                        <li><a href="6eme_cours.html">6ème</a></li>
+                        <li><a href="5eme_cours.html">5ème</a></li>
+                        <li><a href="4eme_cours.html">4ème</a></li>
+                        <li><a href="3eme_cours.html">3ème</a></li>
+                        <li><a href="2nde_cours.html">2nde</a></li>
+
+                    </ul>
+                </li>
+                <li class="deroulant">
+                    <a href="#" class="deroulant-toggle">Exercices </a>
+                    <ul class="deroulant-menu">
+                        <li><a href="6eme_exercices.html">6ème</a></li>
+                        <li><a href="5eme_exercices.html">5ème</a></li>
+                        <li><a href="4eme_exercices.html">4ème</a></li>
+                        <li><a href="3eme_exercices.html">3ème</a></li>
+                        <li><a href="2nde_exercices.html">2nde</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Bouton hamburger pour les mobiles -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-- Menu mobile caché par défaut -->
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Cours</a>
+                <ul class="dropdown-menu">
+                    <li><a href="6eme_cours.html">6ème</a></li>
+                    <li><a href="5eme_cours.html">5ème</a></li>
+                    <li><a href="4eme_cours.html">4ème</a></li>
+                    <li><a href="3eme_cours.html">3ème</a></li>
+                    <li><a href="2nde_cours.html">2nde</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Exercices</a>
+                <ul class="dropdown-menu">
+                    <li><a href="6eme_exercices.html">6ème</a></li>
+                    <li><a href="5eme_exercices.html">5ème</a></li>
+                    <li><a href="4eme_exercices.html">4ème</a></li>
+                    <li><a href="3eme_exercices.html">3ème</a></li>
+                    <li><a href="2nde_exercices.html">2nde</a></li>
+
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<script src="script.js"></script>
+
+
+<header class="banner" style="background: url('4eme.png') no-repeat center center;position: relative;
+background-size: cover;
+color: #011163;
+text-align: center;
+padding: 60px 20px;
+animation: fadeIn 1s ease-in;
+overflow: hidden; /* Assure que rien ne dépasse du conteneur */">    <div class="banner-content" style="text-align: center;">
+        <h1>Cours - Niveau 4ème</h1>
+        <p>Développez vos compétences en mathématiques avec des ressources et des outils modernes.</p>
+
+        
+        
+
+        <!-- Boutons d'appel à l'action 
+        <div class="cta-buttons">
+            <a href="#cours" class="cta-button">Voir les Cours</a>
+            <a href="#exercices" class="cta-button">Commencer les Exercices</a>
+        </div>-->
+    </div>
+
+    <style>
+        /* Style pour le texte "Temps restant avant le brevet" */
+        .brevet {
+            font-size: 1.5em;
+            background: #480101;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            margin-top:2%;
+        }
+
+        /* Container principal du compte à rebours */
+        #countdown-container {
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards 1s;
+        }
+
+        /* Styles pour le timer */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            gap: 10px;
+        }
+
+        /* Chaque bloc de temps */
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #480101;
+        }
+
+        /* Styles pour les labels sous chaque nombre */
+        .label {
+            font-size: 0.5em;
+            margin-top: 5px;
+        }
+
+        /* Séparateurs entre les blocs de temps */
+        .separator {
+            font-size: 1em;
+            color: #480101;
+            margin-top: -40px;
+        }
+
+        /* Progress bar container */
+        .progress-bar-container {
+            width: 80%;
+            max-width: 600px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards 0.5s;
+            box-shadow: #480101;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #480101, #f90101);
+            animation: loadProgressBar 3s ease-in-out forwards;
+            box-shadow: #480101;
+        }
+
+        /* Keyframes pour la barre de progression */
+        @keyframes loadProgressBar {
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Animation de fondu pour le timer */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation pour le titre et le sous-titre */
+        .banner-content h1 {
+            animation: fadeInDown 2s ease-out forwards;
+        }
+
+        .banner-content p {
+            animation: fadeInUp 2s ease-out forwards 0.5s;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styles pour les boutons CTA */
+        .cta-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards 2s;
+        }
+
+        .cta-button {
+            background-color: #011163;
+            color: #fff;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+            transform: scale(1.05);
+            color: black;
+        }
+
+
+        /* Adaptation spécifique pour les très petits écrans */
+        @media (max-width: 480px) {
+            .brevet {
+                font-size: 1em;
+            }
+
+            #countdown {
+                font-size: 1.5em;
+                gap: 3px;
+            }
+
+            .label {
+                font-size: 0.3em;
+            }
+
+            .separator {
+                font-size: 0.6em;
+            }
+
+            .progress-bar-container {
+                width: 80%;
+                height: 6px;
+            }
+
+            .cta-button {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</header>
+
+<section class="four-columns" id="four-columns">
+    <div class="container">
+
+        <div class="column">
+            <h3>Nombre et Calcul</h3>
+                <ul class="no-bullets">
+                    <li> <a href=""> Divisibilité et nombres premiers </a> </li>
+                    <li><a href="">  Nombres relatifs </a></li>
+                    <li> <a href=""> Fractions, puissances, racine carrée </a> </li>
+                    <li> <a href="https://drive.google.com/file/d/10vsRjGeVtjlRyh6li7DtiztyOFnwvzdh/view?usp=sharing"> Nombres réels </a> </li>
+                    <li> <a href=""> Multiple, diviseurs et nombres premiers</a> </li>
+                    <li> <a href=""> Equations, inéquations </a> </li>
+                </ul>
+        </div>
+
+        <div class="column">
+             <h3>Statistiques et probabilités </h3>
+            <ul class="no-bullets">
+                <li> <a href=""> Information chiffrée </a> </li>
+                <li><a href="">  Statistiques descriptives </a></li>
+                <li> <a href=""> Probabilités </a> </li>
+                <li> <a href=""> Echantillonnage </a> </li>
+
+            </ul>
+        </div>
+
+        <div class="column">
+            <h3> Géométrie</h3>
+            <ul class="no-bullets">
+                <li><a href="">  Les vecteurs </a></li>
+                <li> <a href=""> Vecteurs et repérage </a> </li>
+                <li> <a href=""> Droites du plan </a> </li>
+                <li> <a href=""> Système d'équations et droites </a> </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <h3> Fonctions </h3>
+            <ul class="no-bullets">
+                <li><a href=""> Notion de fonction </a></li>
+                <li> <a href=""> Les fonctions de référence </a> </li>
+                <li> <a href=""> Variations d'une fonction </a> </li>
+                <li> <a href=""> Système d'équations et droites </a> </li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <h3>Algorithmie et Programmation</h3>
+            <ul class="no-bullets">
+                <li> <a href=""> Python </a> </li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="resources" id="resources">
+    <div class="container">
+        <h2 style="font-size:1.6em ; color: #011163">Ressources Supplémentaires</h2>
+        <ul>
+            <li><a href="https://drive.google.com/file/d/19laF5t4qcWTBAXVLAh3kImf8Of5uCO5c/view?usp=drive_link" target="_blank">Carnet de réussite </a></li>
+            <li><a href="lien-vers-une-ressource" target="_blank"> Questions flashs </a></li>
+
+        </ul>
+    </div>
+</section>
+
+
+<footer class="site-footer" style="margin-left:2%; margin-right:2%">
+    <div class="footer-content">
+        <p class="footer-name"> Anouchka Récard <br class="mobile-only">- Professeure de mathématiques </p>
+        <p><a href="mentions_legales.html" class="footer-link">Mentions légales</a></p>
+        <p class="footer-location">Saint-Étienne, France</p>
+    </div>
+</footer>
+</html>
