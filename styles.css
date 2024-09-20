@@ -21,7 +21,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Tinos'; /* Police pour le texte principal */
     background-color: #0f013114;
 }
 
@@ -219,6 +219,9 @@ body {
     padding: 60px 20px;
     animation: fadeIn 1s ease-in;
     overflow: hidden; /* Assure que rien ne dépasse du conteneur */
+    box-shadow: 12px 12px 15px rgba(0, 16, 32, 0.7); /* Ombre subtile */
+    background-attachment: fixed; /* Fixe l'image de fond pour l'effet parallax */
+
 }
 
 .banner::before {
@@ -412,17 +415,25 @@ body {
 }
 
 .feature-item {
-    background-color: #02005c18;
+    background: rgba(2, 0, 92, 0.094);
+
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 2px 4px 2px #00000074;
     width: 300px;
     text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-in forwards;
-    color:black;
+    color: black;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(82, 0, 0, 0.098); /* Ombre profonde */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure subtile */
+    transform: translateY(-10px); /* Soulèvement du bloc */
+}
+
+.feature-item:hover {
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.6); /* Ombre encore plus marquée au survol */
+    transform: scale(1.05); /* Agrandissement léger pour accentuer l'effet */
     
 }
+
 
 .feature-item_2 {
     background-color: #f9f9f9;
@@ -610,7 +621,7 @@ body {
 }
 
 .image-back {
-    background-color: #02005c82; /* Couleur de fond du dos de la carte */
+    background-color: #000000; /* Couleur de fond du dos de la carte */
     color: #fff;
     transform: rotateY(180deg);
     display: flex;
