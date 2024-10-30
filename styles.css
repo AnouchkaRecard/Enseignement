@@ -27,7 +27,7 @@ body {
 
 /* Conteneur du menu */
 .menu-deroulant {
-    background-color: #0f0131;
+    background-color: #1b1818;
     color: #fff;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@ body {
     font-size: 1.5rem;
     margin-right: 20px;
     position: relative;
-    margin-left: 5%;
+    margin-left: 3%;
     margin-right: 20%;
 }
 
@@ -212,7 +212,7 @@ body {
 /*section 1*/
 .banner {
     position: relative;
-    background: url('accueil.jpg') no-repeat center center;
+    background: url('imageindex.jpg') no-repeat center center;
     background-size: cover;
     color: #011163;
     text-align: center;
@@ -231,7 +231,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* Couleur noire avec 50% d'opacité */
     z-index: 1; /* Assure que l'overlay est au-dessus de l'image de fond mais sous le contenu */
 }
 
@@ -246,7 +245,9 @@ body {
     margin: 0;
     opacity: 0;
     animation: fadeInUp 1s ease-in forwards 0.5s;
+    color : rgb(13, 2, 90)
 }
+
 
 .banner-content p {
     font-size: 1.2em;
