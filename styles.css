@@ -279,7 +279,7 @@ body {
 .about h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #480101;
+    color: #100148;
 }
 
 .about p {
@@ -307,7 +307,7 @@ body {
     /* Style du titre */
     .resources h2 {
         font-size: 2.5em;
-        color: #480101; /* Couleur sombre pour le titre */
+        color: #100148; /* Couleur sombre pour le titre */
         margin-bottom: 20px;
         animation: slideInDown 1s ease-out;
     }
@@ -385,6 +385,112 @@ body {
         }
         
         .resources a {
+            font-size: 0.9em; /* Réduction de la taille des liens */
+        }
+    }
+
+
+    /*fin*/
+
+    /* accueil section 3*/
+    /* Style général pour la section */
+    .resources_1 {
+        margin-top : 5%;
+        margin-bottom : 1%;
+        background-color: #ffffff; /* Couleur de fond douce */
+        padding: 70px 20px;
+        text-align: center;
+        animation: fadeIn 1.5s ease-out;
+        box-shadow: 4px 4px 4px;
+    }
+    
+    /* Conteneur pour aligner le contenu */
+    .resources_1 .container_1 {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Style du titre */
+    .resources_1 h2 {
+        font-size: 2.5em;
+        color: #100148; /* Couleur sombre pour le titre */
+        margin-bottom: 20px;
+        animation: slideInDown 1s ease-out;
+    }
+    
+    /* Style des éléments de liste */
+    .resources_1 ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .resources_1 li {
+        margin: 15px 0;
+    }
+    
+    /* Style des liens */
+    .resources_1 a {
+        text-decoration: none;
+        color: #3498db; /* Couleur du lien */
+        font-size: 1.2em;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        transition: color 0.3s ease, border-color 0.3s ease;
+        display: inline-block;
+    }
+    
+    /* Effet au survol des liens */
+    .resource_1 a:hover {
+        color: #1d72b8; /* Couleur au survol */
+        border-color: #1d72b8;
+    }
+    
+    /* Animation de fondu */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    /* Animation pour faire apparaître le titre de haut en bas */
+    @keyframes slideInDown {
+        0% {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    /* Adaptation pour les petits écrans */
+    @media (max-width: 768px) {
+        .resources_1 h2 {
+            font-size: 2em; /* Réduction de la taille du titre pour les petits écrans */
+        }
+        
+        .resources_1 a {
+            font-size: 1em; /* Réduction de la taille des liens pour les petits écrans */
+        }
+    }
+    
+    /* Adaptation pour les très petits écrans */
+    @media (max-width: 480px) {
+
+        
+        .resources_1 {
+            padding: 30px 10px; /* Réduction du padding pour les très petits écrans */
+        }
+        
+        .resources_1 h2 {
+            font-size: 1.5em; /* Réduction supplémentaire de la taille du titre */
+        }
+        
+        .resources_1 a {
             font-size: 0.9em; /* Réduction de la taille des liens */
         }
     }
