@@ -166,43 +166,137 @@
             <h1 style="font-size : 1.3em ; color: #ffffff; letter-spacing: 0.2em;
 ">Niveau collège, Seconde & Statistiques descriptives - ISG de Lyon </h1>
     
+          <div class="dual-countdown-container">
+  <!-- Compteur Brevet -->
+  <div class="countdown-box">
+    <h2>Temps restant avant le Brevet</h2>
+    <div class="countdown" id="brevet-countdown">
+      <div class="time-block">
+        <span id="brevet-days">00</span>
+        <span class="label">Jours</span>
+      </div>
+      <div class="time-block">
+        <span id="brevet-hours">00</span>
+        <span class="label">Heures</span>
+      </div>
+      <div class="time-block">
+        <span id="brevet-minutes">00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="time-block">
+        <span id="brevet-seconds">00</span>
+        <span class="label">Secondes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compteur Bac -->
+  <div class="countdown-box">
+    <h2>Temps restant avant le Bac</h2>
+    <div class="countdown" id="bac-countdown">
+      <div class="time-block">
+        <span id="bac-days">00</span>
+        <span class="label">Jours</span>
+      </div>
+      <div class="time-block">
+        <span id="bac-hours">00</span>
+        <span class="label">Heures</span>
+      </div>
+      <div class="time-block">
+        <span id="bac-minutes">00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="time-block">
+        <span id="bac-seconds">00</span>
+        <span class="label">Secondes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.dual-countdown-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* s'adapte aux petits écrans */
+  margin: 20px 0;
+}
+
+.countdown-box {
+  background: #f8f8f8;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 250px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.5em;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .dual-countdown-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+<script>
+// Dates des examens
+const brevetDate = new Date("June 26, 2026 00:00:00").getTime();
+const bacDate = new Date("June 18, 2026 00:00:00").getTime();
+
+function updateCountdown(targetDate, prefix) {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if(distance < 0) return;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById(`${prefix}-days`).innerText = String(days).padStart(2,'0');
+  document.getElementById(`${prefix}-hours`).innerText = String(hours).padStart(2,'0');
+  document.getElementById(`${prefix}-minutes`).innerText = String(minutes).padStart(2,'0');
+  document.getElementById(`${prefix}-seconds`).innerText = String(seconds).padStart(2,'0');
+}
+
+// Mise à jour toutes les secondes
+setInterval(() => {
+  updateCountdown(brevetDate, "brevet");
+  updateCountdown(bacDate, "bac");
+}, 1000);
+
+// Initial call
+updateCountdown(brevetDate, "brevet");
+updateCountdown(bacDate, "bac");
+</script>
+  
+
+
             
-           <!-- <div id="countdown-container">
-                <p class="brevet"> Premier jour du brevet dans :</p>
-    
-                <div id="countdown">
-                    <div class="time-block">
-                        <span class="countdown-days" id="days">00</span>
-                        <span class="label">Jours</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-hours" id="hours">00</span>
-                        <span class="label">Heures</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-minutes" id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span class="countdown-seconds" id="seconds">00</span>
-                        <span class="label">Secondes</span>
-                    </div>
-                </div>
-            </div> --> 
-    
-            <!-- Barre de chargement
-            <div class="progress-bar-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div> --> 
-    
-            <!-- Boutons d'appel à l'action 
-            <div class="cta-buttons">
-                <a href="#cours" class="cta-button">Voir les Cours</a>
-                <a href="#exercices" class="cta-button">Commencer les Exercices</a>
-            </div>-->
         </div>
     
         <style>
@@ -577,3 +671,4 @@
        
 </body>
 </html>
+
