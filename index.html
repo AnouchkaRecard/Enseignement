@@ -171,7 +171,7 @@
            <div class="dual-countdown-container">
   <!-- Compteur Brevet -->
   <div class="countdown-box">
-    <h2>Temps restant avant le Brevet</h2>
+    <h2>Temps restant avant <br> le Brevet</h2>
     <div class="countdown" id="brevet-countdown">
       <div class="time-block">
         <span id="brevet-days">00</span>
@@ -194,7 +194,7 @@
 
   <!-- Compteur Bac -->
   <div class="countdown-box">
-    <h2>Temps restant avant le Bac</h2>
+    <h2>Temps restant avant <br> le Bac</h2>
     <div class="countdown" id="bac-countdown">
       <div class="time-block">
         <span id="bac-days">00</span>
@@ -233,6 +233,9 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   flex: 1;
   min-width: 250px;
+  margin-bottom: 7%;
+
+
 }
 
 .countdown {
@@ -241,6 +244,8 @@
   gap: 10px;
   font-size: 2em;
   margin-top: 10px;
+  margin-bottom: 5%;
+
 }
 
 .time-block {
@@ -295,6 +300,8 @@ setInterval(() => {
 updateCountdown(brevetDate, "brevet");
 updateCountdown(bacDate, "bac");
 </script>
+
+
 
         </div>
     
