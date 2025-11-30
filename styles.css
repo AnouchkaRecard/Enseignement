@@ -1279,3 +1279,20 @@ font-size: 2em;
         margin: 0 auto;
     }
 }
+
+.countdown-box h2 {
+    font-size : 1.3em ;
+
+}
+
+.container_1 h2 {
+font-size: 2em;
+    margin-bottom: 20px;
+    color: #100148;
+}
+
+.container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #100148;
+}
