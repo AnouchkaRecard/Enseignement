@@ -21,7 +21,7 @@
 
 body {
     margin: 0;
-    font-family: 'Tinos'; /* Police pour le texte principal */
+    font-family: 'Tinos', serif; 
     background-color: #0f013114;
 }
 
